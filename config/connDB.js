@@ -1,12 +1,12 @@
 const { Sequelize } = require('sequelize');
 const dotenv = require('dotenv');
 dotenv.config();
-const userDB = process.env.DB_USERNAME;
-const passDB = process.env.DB_PASSWORD;
-const hostDB = process.env.DB_HOST;
-const portDB = process.env.DB_PORT;
-const nameDB = process.env.DB_DATABASE;
-const dialectDB = process.env.DB_DIALECT;
+const userDB = process.env.MYSQL_USER;
+const passDB = process.env.MYSQL_PASSWORD;
+const hostDB = process.env.MYSQL_HOST;
+const portDB = process.env.MYSQL_PORT;
+const nameDB = process.env.MYSQL_DBNAME;
+const dialectDB = 'mysql';
 
 // Option 2: Passing parameters separately (other dialects)
 const sequelize = new Sequelize(nameDB, userDB, passDB, {

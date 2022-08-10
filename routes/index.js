@@ -3,7 +3,7 @@ const routerApi = express.Router({caseSensitive:true,strict:true});
 const routerAll = express.Router({caseSensitive:true,strict:true});
 const activity_group = require('../controllers/activity_group_api');
 const todo_list = require('../controllers/todo_list_api');
-const groupEndPoint = '/api/v1';
+// const groupEndPoint = '';
 
 //start activity group//
 routerApi.post('/activity-groups',activity_group.save);
@@ -21,6 +21,6 @@ routerApi.get('/todo-items',todo_list.detilByActivity);
 routerApi.get('/todo-items/:id',todo_list.detilById);
 //end to do list//
 
-routerAll.use(groupEndPoint,routerApi);
+routerAll.use(routerApi);
 
 module.exports = routerAll;

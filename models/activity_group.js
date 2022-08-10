@@ -3,7 +3,7 @@ const db = require('../config/connDB');
 // const todo = require('./todo_list');
  
 // Define schema
-const ActivityGroup = db.define('activity_groups', {
+const ActivityGroup = db.define('activities', {
     // Define attributes
     id: {
         type: DataTypes.INTEGER,
@@ -13,11 +13,11 @@ const ActivityGroup = db.define('activity_groups', {
     },
     email:{
         type: DataTypes.STRING(100),
-        allowNull: false
+        allowNull: true
     },
     title: {
         type: DataTypes.STRING(200),
-        allowNull: false
+        allowNull: true
     }
 
 },{

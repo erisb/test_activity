@@ -4,9 +4,10 @@ WORKDIR /app
 
 COPY ["package.json","package-lock.json","./"]
 
-RUN npm install --production
-
 COPY . .
+
+RUN npm install --production
+RUN npx sequelize-cli db:migrate
 
 EXPOSE 3030
 

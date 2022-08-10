@@ -3,7 +3,7 @@ const db = require('../config/connDB');
 const activity = require('./activity_group');
 
 // Define schema
-const TodoList = db.define('todo_lists', {
+const TodoList = db.define('todos', {
     // Define attributes
     id: {
         type: DataTypes.INTEGER,
@@ -22,14 +22,18 @@ const TodoList = db.define('todo_lists', {
         allowNull: false
     },
     is_active: {
-        type: DataTypes.ENUM('true','false'),
-        allowNull: false,
-        defaultValue:'true'
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue:1
     },
     priority: {
         type: DataTypes.ENUM('very-high','high','normal','low','very-low'),
         allowNull: false,
         defaultValue:'very-high'
+    },
+    status:{
+        type: DataTypes.STRING(100),
+        allowNull: true
     }
 
 },{
